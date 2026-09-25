@@ -1,0 +1,40 @@
+technologii .net maui, kontrolki interfejsu takie jak buttton, label, entry nie są pozycjonowane na ekranie za pomocą sztywnych współrzędnych pikselowych do zarządzania rozmieszczeniem elementów 
+służą kontenery układu które nazywają się layouts odpowiadają one za wyliczenie rozmiaru elementów potomnych, ustalenie ich fizycznej pozycji w przestrzeni
+ekranu
+
+Jednokierunkowe układy stosowe (vertical stack layout) - układa kontrolki potomne pionowo 1 pod drugą 
+
+(Horizontal Stack Layout) - układa kontrolki poziomo 1 obok drugiej
+
+do kluczowych właściwości należą 
+Spacing - określa stały odstęp pomiędzy kolejnymi elementami w kontenerze w jednostkach niezależnych od urządzenia, eliminuje konieczność ręcznego definiowania
+marginesu dla każdej kontrolki
+
+Zewnętrzny margines kontenera - odstęp między krawędzią układu a jego zawartością 
+
+Grid - Pozwala układać elementy w strukturze wierszy i kolumn kontrolki mogą zajmować 1 kolumnę lub rozciągać się na wiele wierszy 
+do podziału siatki służą właściwości (row deffinitions, collumn deffinition)
+wymiary podaje się w 3 trybach
+ bezwzględny (Absolute) nie reaguje na rozmiary ekran,
+ drugi tryb automatyczny (Auto) - rozmiar dopasowuje się dokładnie
+ proporcionalu (Star )-  dzieli pozostałą przestrzeń proporcjonalnie według podanych 
+
+
+Pozycjonowanie kontrolek według siatki - elementy przypisuje się do odpowiedniej komórki za pomocą właściwości dołączone, elementy indeksuje się domyślnie
+od zera RowSpacing oraz ColumnSpacing
+
+Grid.Row(1)
+Grid.Column(1)
+Grid.RowSpan(2)
+Grid.CollumnSpan(2)
+RowSpacing ="10"
+CollumnSPacing = "10"
+
+każdy widok potomny umieszczony w kontenerze posiada właściwości - horizontal options czyli wyrównanie w poziomie i vertical options
+Start - do lewej/do góry
+Center - wyśrodkowanie
+End - do prawej do dołu 
+full - wypełnienie całej dostępnej przestrzeni 
+
+FlexLayout - to układ który umożliwia rozmieszczenie elementów podrzędnych poziomo i pionowo oraz odbijanie elementów podrzędnych jeśli jest ich zbyt wiele 
+aby zmieścić je w 1 wierszu lub 1 kolumnie, flex layout może kontrolować orientacje i wyrównanie oraz dostosować się do różnych rozmiarów ekranu 
